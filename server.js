@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');  
 const app = express();  
 const cookieParser = require('cookie-parser');  
@@ -9,8 +11,8 @@ const path = require('path'); // For handling file paths
 // MySQL Database Configuration
 const db = mysql.createConnection({  
   host: 'database-1.c5qgia2yk0zp.us-east-1.rds.amazonaws.com',  
-  user: 'admin',  
-  password: 'Singham11',  
+  user: process.env.DB_USER,  
+  password: process.env.DB_PASS,  
   database: 'users'  
 });  
 
